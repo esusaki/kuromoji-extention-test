@@ -11,7 +11,13 @@ kuromoji.builder({ dicPath: "./dict" }).build(function (err, tokenizer) {
 
     console.log(path);
 
-    path.forEach((element)=>ans = ans +  ' ' + element.basic_form + '(' + element.pos  + ') ');
+    path.forEach((element)=>{
+        if (element.pos === '名詞'){
+            ans =  ans + 'バナナ';
+        } else {
+            ans = ans +  ' ' + element.basic_form + '(' + element.pos  + ') '}
+        }
+    );
 
     ans += '<p>コンソールでもっといろいろな情報を見られます</p>'
 
